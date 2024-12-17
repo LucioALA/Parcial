@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejemplo 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+       
+            
+                <h4>Ingresar temperatura en Cº</h4>
+
+                <div >
+                    
+                   
+                </div>
+                Ingresar temperatura Cº<input v-model="valorC" type="number"class="form-control">
+                <br>
+                Conv temperatura F {{ convertiraF() }}
+                <br>
+                Conv temperatura K {{ convertiraK() }}
+
+               
+            
+
+            <p>Respuestas: 1: C - 2:B - 3:C - 4:A</p>
+        
+       
+        <hr>
+
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            valorC: 0,
+            
+            
+            
+        },
+        methods: {
+            convertiraF() {
+                return (this.valorC * 9 / 5) + 32
+        },
+        
+        convertiraK() {
+                return parseFloat(this.valorC) + 273.15
+        }
+            
+        
+        },
+        computed:{
+           
+        }
+    });
+</script>
